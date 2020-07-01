@@ -1,0 +1,27 @@
+<div id="pizza_info">
+    <h4>Name: <%= @pizza.name %></h4>
+    <h4>Ingredients:
+        <ul>
+            <% @pizza.pizza_ings.each do |ing| %>
+                <li><%= ing %></li>
+            <% end %>
+        </ul>
+    </h4>
+    <h4>Available at: 
+        <% if @pizza.restaurants.count >= 1 %>
+            <ul>
+                <% @pizza.restaurants.each do |rest| %>
+                    <li> <%= link_to rest.name, restaurant_path(rest.id) %></li>
+                <% end %>
+            </ul>
+        <% else %>
+            No Restaurants yet :( Check back soon! 
+        <% end %>
+    </h4>
+</div>
+
+<div id="actions">
+    <%= link_to "Delete Pizza", pizza_path(@pizza.id), method: :delete, data: {confirm: "Are you sure?"} %><br>
+    <%= link_to "Back to All Pizzas", pizzas_path %><br>
+    <%= link_to "View All Restaurants", restaurants_path %>
+</div>

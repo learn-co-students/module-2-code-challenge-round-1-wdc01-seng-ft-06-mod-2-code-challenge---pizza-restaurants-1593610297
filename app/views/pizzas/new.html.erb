@@ -1,0 +1,28 @@
+<h1>Create a New Pizza!</h1>
+
+<br>
+<div id="pizza_form">
+
+    <%= form_for @pizza do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+
+        <%= f.label :ingredients %>
+        <%= f.text_field :ingredients %><br>
+
+        <%= f.label :restaurant_ids, "Restaurant Location:" %>
+        <%= f.collection_select(:restaurant_ids, Restaurant.all, :id, :name) %><br>
+
+        <%= f.submit %> 
+    <% end %> 
+</div>
+<div id="errors">
+    <% if @pizza.errors.count >= 1 %>
+        Oops! Please fix these errors:
+        <ul>
+            <% @pizza.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
