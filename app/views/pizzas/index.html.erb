@@ -3,7 +3,7 @@
 <%= button_to "Create New Pizza", new_pizza_path, method: :get %><br>
 <% @pizzas.each do |pizza| %>
   <h1 style='font-size:1.5rem;margin-top:50px'>Pizza Name:
-      <%= link_to pizza.name, pizza_path(pizza.id) %>
+      <%= link_to pizza.name, pizza_path(pizza.id) %>, <%= pizza.restaurants.count %>
   </h1>
   <p>Ingredients: <%= pizza.ingredients %></p>
 <% end %>
