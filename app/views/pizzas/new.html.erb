@@ -1,0 +1,23 @@
+<h1>New Pizza</h1>
+
+<% if @pizza.errors.any? %>
+    <h2>Errors</h2>
+    <% @pizza.errors.full_messages.each do |message| %>
+        <span style="color: red"><%=message %></span><br />
+    <% end %>
+<% end %>
+
+<%= form_for @pizza do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br />
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients %><br />
+    <%= f.label :restaurants %>
+    <%= f.collection_select :restaurant_ids, Restaurant.all, :id, :name %><br />
+    <%= f.submit %>
+<% end %>
+
+<h2>Links</h2>
+<div>
+<%= link_to "Back to pizzas", pizzas_path %>
+</div>
