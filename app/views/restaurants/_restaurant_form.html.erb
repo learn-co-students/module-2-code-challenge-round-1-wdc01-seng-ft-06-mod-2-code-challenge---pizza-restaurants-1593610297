@@ -1,0 +1,25 @@
+<div id="errors">
+    <% if @restaurant.errors.count >= 1 %>
+        Oops! Please fix these errors:
+        <ul>
+            <% @restaurant.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
+<br>
+<div id="restaurant_form">
+    <%= form_for @restaurant do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+        
+        <%= f.label :address %>
+        <%= f.text_field :address %><br>
+
+        <%= f.label :pizza_ids, "Choose Pizzas to Serve" %>
+        <%= f.collection_check_boxes(:pizza_ids, Pizza.all, :id, :name) %><br>
+
+        <%= f.submit %>
+    <% end %>
+</div>
