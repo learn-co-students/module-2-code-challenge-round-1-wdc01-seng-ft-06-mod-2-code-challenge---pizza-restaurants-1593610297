@@ -8,6 +8,8 @@
 #
 #   1
 Restaurant.destroy_all
+Pizza.destroy_all
+RestaurantPizza.destroy_all
  
 restaurants = [{
   name: "Sottocasa NYC",
@@ -71,4 +73,8 @@ pizzas = [
 
 pizzas.each do |p|
   Pizza.create!(p)
+end
+
+Restaurant.all.each do |restaurant|
+  restaurant.pizzas << Pizza.all.sample(8)
 end
