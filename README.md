@@ -53,17 +53,17 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 ***Read through these deliverables carefully to understand the requirements for this code challenge. Tackle them one by one, as they build on each other sequentially.***
 
-### 1. Create the RestaurantPizza Association
+<!-- ### 1. Create the RestaurantPizza Association -->
 
 Create the join model RestaurantPizza to store the association between Pizzas and Restaurants. Update the schema and models to create the relationship.
 
 Each Restaurant can have many Pizzas. Each Pizza can belong to multiple Restaurants.
 
-### 2. Pizza Show Page
+<!-- ### 2. Pizza Show Page -->
 
 There should be a show page for each Pizza. It should display the name and ingredients.
 
-### 3. Restaurant Show Page
+<!-- ### 3. Restaurant Show Page -->
 
 There should be a show page for each Restaurant. It should include:
 
@@ -72,11 +72,11 @@ There should be a show page for each Restaurant. It should include:
 
 Each pizza in the list should link to that Pizza's show page.
 
-### 4. Restaurants Index Page Links
+<!-- ### 4. Restaurants Index Page Links -->
 
 On the Restaurant index page, each Restaurant's name should link to the restaurant's show page.
 
-### 5. New Pizza Form
+<!-- ### 5. New Pizza Form -->
 
 Add controller actions and views necessary to show a form to create a new pizza. The form should have:
 
@@ -87,7 +87,7 @@ Add controller actions and views necessary to show a form to create a new pizza.
 
 After submitting, the user should be redirected to the new Pizza's show page.
 
-### 6. Pizza Validation
+<!-- ### 6. Pizza Validation -->
 
 Add validations to the Pizza model so that each pizza must have:
 
@@ -96,7 +96,7 @@ Add validations to the Pizza model so that each pizza must have:
 
 Add error handling to the Pizza create action. Show any validation errors on the Pizza creation form if the user attempts to save an invalid Pizza.
 
-### 7. Advanced: Pizza Validation
+<!-- ### 7. Advanced: Pizza Validation -->
 
 Pizzas should not have the same name.
 
@@ -104,11 +104,11 @@ Add a validation to prevent this.
 
 Update the error handling and error display so that this error shows on the Pizza creation form.
 
-### 8. Advanced: Display Count of Restaurants on Pizza Index Page
+<!-- ### 8. Advanced: Display Count of Restaurants on Pizza Index Page -->
 
 On the Pizza index page, display the number of Restaurants that have that Pizza next to each Pizza's name.
 
-### 9. Advanced: Restaurant Update Form to Link Multiple Pizzas
+<!-- ### 9. Advanced: Restaurant Update Form to Link Multiple Pizzas -->
 
 Create a form to update a Restaurant with:
 

@@ -1,0 +1,21 @@
+<h1><%= @restaurant.name %></h1>
+<br>
+<div id="restaurant_info">
+    <h3>Address: <%= @restaurant.address %></h3>
+    <h3>Pizzas Offered:</h3>
+        <% if @restaurant.pizzas.count >= 1 %>
+        <h5><ul>
+            <% @restaurant.pizzas.each do |pizza| %>
+                <li><%= link_to pizza.name, pizza_path(pizza.id) %></li>
+            <% end %>
+        </ul></h5>
+        <% else %>
+            None yet. Check back soon!
+        <% end %> 
+   
+</div>
+
+<div id="actions">
+    <%= link_to "Edit this Restaurant", edit_restaurant_path %><br>
+    <%= link_to "Back to All Restaurants", restaurants_path %> 
+</div>

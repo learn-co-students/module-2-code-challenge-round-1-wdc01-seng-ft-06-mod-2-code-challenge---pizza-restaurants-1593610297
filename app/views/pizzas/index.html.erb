@@ -2,7 +2,13 @@
 
 <% @pizzas.each do |pizza| %>
   <h1 style='font-size:1.5rem;margin-top:50px'>Pizza Name:
-      <%= pizza.name %>
+      <%= link_to pizza.name, pizza_path(pizza.id) %>
   </h1>
+  <p>Available at <%= pizza.restaurants.count %> Restaurant(s) </p>
   <p>Ingredients: <%= pizza.ingredients %></p>
 <% end %>
+<br>
+<div id="actions">
+  <%= link_to "Create a Pizza", new_pizza_path %><br>
+  <%= link_to "View Restaurants", restaurants_path %>
+</div>
