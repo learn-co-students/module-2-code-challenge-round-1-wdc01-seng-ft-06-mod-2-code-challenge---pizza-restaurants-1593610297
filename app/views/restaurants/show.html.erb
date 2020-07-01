@@ -1,0 +1,13 @@
+<h1> Restaurant Details </h1>
+
+<div>Name: <%= @restaurant.name %></div><br>
+<div>Address: <%= @restaurant.address %></div><br>
+<div>Pizza Menu:</div><br>
+
+<ul>
+    <% @restaurant.pizzas.uniq.each do |pizza| %>
+        <li><%= link_to pizza.name, pizza_path(pizza.id) %></li>
+    <% end %>
+</ul><br>
+
+<%= button_to "Back", restaurants_path, method: :get %>
