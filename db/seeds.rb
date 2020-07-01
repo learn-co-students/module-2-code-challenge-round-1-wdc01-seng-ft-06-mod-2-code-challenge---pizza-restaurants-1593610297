@@ -8,6 +8,8 @@
 #
 #   1
 Restaurant.destroy_all
+Pizza.destroy_all
+RestaurantPizza.destroy_all
  
 restaurants = [{
   name: "Sottocasa NYC",
@@ -71,4 +73,11 @@ pizzas = [
 
 pizzas.each do |p|
   Pizza.create!(p)
+end
+
+restaurants.each do |r|
+  6.times do |p|
+    RestaurantPizza.create(restaurant_id: Restaurant.find_by(name: r[:name]).id,
+     pizza_id: Pizza.find_by(name: pizzas.sample[:name]).id)
+  end
 end
