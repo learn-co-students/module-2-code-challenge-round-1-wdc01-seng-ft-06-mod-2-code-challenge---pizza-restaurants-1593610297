@@ -1,19 +1,23 @@
 class RestaurantsController < ApplicationController
+  
   before_action :set_restaurant, only: [:show,:edit]
+  
   def index
     @restaurants = Restaurant.all
   end
-  def show
-   
+  
+  def show   
   end
-  def edit
-    
+  
+  def edit    
   end
+  
   def update
     @restaurant = Restaurant.create(r_params)
     redirect_to restaurant_path(@restaurant)
   end
-  private
+  
+  private#-------------------------------------------------
   def r_params
     params.require(:restaurant).permit(:name,:address,:pizza_ids => [])
   end
